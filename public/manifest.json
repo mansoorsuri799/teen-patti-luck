@@ -1,11 +1,11 @@
 {
-  "name": "Card Rummy",
-  "short_name": "Card Rummy",
-  "description": "Pakistan's premier card gaming platform offering Teen Patti, Rummy, Dragon vs Tiger and more. Earn real cash rewards!",
+  "name": "Teen Patti Lucky",
+  "short_name": "3 Patti Lucky",
+  "description": "Teen Patti Lucky APK guides for Pakistan — download, JazzCash deposits, EasyPaisa withdrawals, and safe play tips.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#06091F",
-  "theme_color": "#06091F",
+  "background_color": "#041520",
+  "theme_color": "#041520",
   "icons": [
     {
       "src": "/favicon.ico",
@@ -13,16 +13,10 @@
       "type": "image/x-icon"
     },
     {
-      "src": "/card-rummy-logo.webp",
+      "src": "/teen-patti-lucky.webp",
       "sizes": "192x192 512x512",
       "type": "image/webp",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/card-rummy.webp",
-      "sizes": "512x512",
-      "type": "image/webp",
-      "purpose": "any"
     }
   ]
-} 
+}

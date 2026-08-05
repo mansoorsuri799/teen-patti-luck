@@ -1,52 +1,53 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { ROUTES } from '@/lib/site';
 
-const BlogCategoryDropdown = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  
-  const categories = [
-    { name: 'Account & Login', href: '/blog/create-card-rummy-account-and-login' },
-  ];
+const categories = [
+  { name: 'Safety & Legal', href: ROUTES.blogSafety },
+  { name: 'Account & Login', href: ROUTES.blogLogin },
+  { name: 'Bonuses', href: ROUTES.blogBonuses },
+  { name: 'Tips to Win', href: ROUTES.blogTips },
+];
+
+export default function BlogCategoryDropdown() {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', onClick);
+    return () => document.removeEventListener('mousedown', onClick);
+  }, []);
 
   return (
-    <div className="relative mb-8">
+    <div className="relative" ref={ref}>
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full md:w-64 px-4 py-2 bg-secondary text-white rounded-md"
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="text-accent font-medium"
+        aria-expanded={open}
       >
-        <span>Select Category</span>
-        <svg
-          className={`w-5 h-5 transition-transform ${isOpen ? 'transform rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+        Categories ▾
       </button>
-      
-      {isOpen && (
-        <div className="absolute z-10 w-full md:w-64 mt-1 bg-secondary rounded-md shadow-lg">
-          <ul className="py-1">
-            {categories.map((category) => (
-              <li key={category.name}>
-                <Link 
-                  href={category.href}
-                  className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {category.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {open && (
+        <ul className="absolute z-20 mt-2 w-56 rounded-lg border border-gray-700 bg-primary shadow-xl py-2">
+          {categories.map((c) => (
+            <li key={c.href}>
+              <Link
+                href={c.href}
+                className="block px-4 py-2 text-sm text-gray-200 hover:bg-[#0A1F2E] hover:text-accent"
+                onClick={() => setOpen(false)}
+              >
+                {c.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
-};
-
-export default BlogCategoryDropdown; 
+}

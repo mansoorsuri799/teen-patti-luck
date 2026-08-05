@@ -25,13 +25,36 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // /about was indexed by Google but the real page is /about-us
       {
         source: '/about',
         destination: '/about-us',
         permanent: true,
       },
-      // Malformed URLs Google crawled — send them home
+      {
+        source: '/download-card-rummy',
+        destination: '/download-teen-patti-lucky',
+        permanent: true,
+      },
+      {
+        source: '/deposit-money-in-card-rummy',
+        destination: '/deposit-money-in-teen-patti-lucky',
+        permanent: true,
+      },
+      {
+        source: '/withdraw-money-from-card-rummy',
+        destination: '/withdraw-money-from-teen-patti-lucky',
+        permanent: true,
+      },
+      {
+        source: '/card-rummy-for-pc',
+        destination: '/teen-patti-lucky-for-pc',
+        permanent: true,
+      },
+      {
+        source: '/sitemap.xml',
+        destination: '/sitemap-index.xml',
+        permanent: true,
+      },
       {
         source: '/\\$',
         destination: '/',
@@ -45,17 +68,23 @@ const nextConfig = {
     ];
   },
 
-  // Optimize static file serving
   async rewrites() {
     return [
       {
         source: '/.well-known/:path*',
         destination: '/public/.well-known/:path*',
       },
-      // Redirect old 3Patti Blue logo to Card Rummy logo
       {
         source: '/3-patti-blue-logo.webp',
-        destination: '/card-rummy-logo.webp',
+        destination: '/teen-patti-lucky.webp',
+      },
+      {
+        source: '/card-rummy.webp',
+        destination: '/teen-patti-lucky.webp',
+      },
+      {
+        source: '/card-rummy-logo.webp',
+        destination: '/teen-patti-lucky.webp',
       },
     ];
   },
