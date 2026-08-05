@@ -41,6 +41,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/blog/create-teen-patti-lucky-account-and-login',
+        destination: '/blog/how-to-register-and-login-teen-patti-lucky',
+        permanent: true,
+      },
+      {
         source: '/deposit-money-in-card-rummy',
         destination: '/deposit-money-in-teen-patti-lucky',
         permanent: true,

@@ -56,31 +56,19 @@ export default function DownloadTeenPattiLuckyPage() {
         {SITE.version} · {SITE.fileSize} · Pakistan
       </p>
 
-      <div className="flex flex-col md:flex-row gap-8 items-center my-8">
+      <div className="flex flex-col items-center gap-5 my-8 text-center">
         <Image
           src="/teen-patti-lucky.webp"
           alt="Teen Patti Lucky APK download icon"
-          width={220}
-          height={220}
-          className="rounded-2xl object-contain"
+          width={512}
+          height={512}
+          className="rounded-2xl object-contain w-[200px] h-[200px] md:w-[240px] md:h-[240px]"
           priority
+          sizes="240px"
         />
-        <div className="space-y-4 text-center md:text-left">
-          <DownloadCTA />
-          <p className="text-gray-400 text-sm">{SITE.androidMin} recommended</p>
-        </div>
+        <DownloadCTA />
+        <p className="text-gray-400 text-sm">{SITE.androidMin} recommended</p>
       </div>
-
-      <figure className="mb-10">
-        <Image
-          src={SITE.images.game}
-          alt="Teen Patti Lucky lobby after downloading the APK"
-          width={960}
-          height={540}
-          className="w-full rounded-2xl border border-gray-800 object-cover"
-          sizes="(max-width: 896px) 100vw, 896px"
-        />
-      </figure>
 
       <section className="space-y-4 text-gray-300 leading-relaxed mb-10">
         <h2 className="text-2xl font-bold text-accent">Why download Teen Patti Lucky from this guide?</h2>

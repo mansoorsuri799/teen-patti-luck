@@ -58,12 +58,56 @@ export const ROUTES = {
   privacy: "/privacy",
   disclaimer: "/disclaimer",
   blogSafety: "/blog/is-teen-patti-lucky-safe-legal-pakistan",
-  blogLogin: "/blog/create-teen-patti-lucky-account-and-login",
+  blogLogin: "/blog/how-to-register-and-login-teen-patti-lucky",
   blogBonuses: "/blog/teen-patti-lucky-bonuses-rewards-guide",
   blogTips: "/blog/tips-to-win-teen-patti-lucky-pakistan",
+  blogPassword: "/blog/how-to-recover-password-teen-patti-lucky",
+  blogIpLimit: "/blog/fix-ip-limit-exceeds-teen-patti-lucky",
+  blogTokenNull: "/blog/fix-bonus-token-is-null-teen-patti-lucky",
+  blogVsBlue: "/blog/3-patti-lucky-vs-3-patti-blue",
 } as const;
 
 export const BLOG_POSTS = [
+  {
+    slug: "how-to-register-and-login-teen-patti-lucky",
+    title: "How to Register and Login on Teen Patti Lucky",
+    description:
+      "Complete Teen Patti Lucky register and login guide for Pakistan: phone OTP signup, password login, and common login errors.",
+    date: "2026-08-06",
+    readMin: 8,
+  },
+  {
+    slug: "how-to-recover-password-teen-patti-lucky",
+    title: "How to Recover Password on Teen Patti Lucky",
+    description:
+      "Forgot your Teen Patti Lucky password? Step-by-step OTP recovery for Pakistani numbers, plus tips if SMS is delayed.",
+    date: "2026-08-06",
+    readMin: 7,
+  },
+  {
+    slug: "fix-ip-limit-exceeds-teen-patti-lucky",
+    title: "How to Fix IP Limit Exceeds on Teen Patti Lucky",
+    description:
+      "Teen Patti Lucky IP limit exceeds error? Causes and fixes for Pakistani players: Wi-Fi, VPN, network switch, and support steps.",
+    date: "2026-08-06",
+    readMin: 8,
+  },
+  {
+    slug: "fix-bonus-token-is-null-teen-patti-lucky",
+    title: "Bonus Claim Says Token Is Null — How to Fix",
+    description:
+      "Teen Patti Lucky bonus claim shows token is null? Clear causes and fixes: re-login, update APK, network, and when to contact support.",
+    date: "2026-08-06",
+    readMin: 7,
+  },
+  {
+    slug: "3-patti-lucky-vs-3-patti-blue",
+    title: "3 Patti Lucky vs 3 Patti Blue — Comparison 2026",
+    description:
+      "3 Patti Lucky vs 3 Patti Blue for Pakistani players: games, payments, bonuses, and which APK fits your play style.",
+    date: "2026-08-06",
+    readMin: 9,
+  },
   {
     slug: "is-teen-patti-lucky-safe-legal-pakistan",
     title: "Is Teen Patti Lucky Safe & Legal in Pakistan? 2026 Guide",
@@ -71,14 +115,6 @@ export const BLOG_POSTS = [
       "Is Teen Patti Lucky safe and legal in Pakistan? Clear 2026 guide on security, JazzCash withdrawals, risks, and how to play responsibly.",
     date: "2026-08-05",
     readMin: 9,
-  },
-  {
-    slug: "create-teen-patti-lucky-account-and-login",
-    title: "How to Create a Teen Patti Lucky Account & Login",
-    description:
-      "Step-by-step Teen Patti Lucky registration and login guide for Pakistan. Phone signup, OTP, password reset, and login fixes.",
-    date: "2026-08-05",
-    readMin: 8,
   },
   {
     slug: "teen-patti-lucky-bonuses-rewards-guide",
