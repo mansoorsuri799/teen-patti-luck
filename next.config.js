@@ -32,7 +32,12 @@ const nextConfig = {
       },
       {
         source: '/download-card-rummy',
-        destination: '/download-teen-patti-lucky',
+        destination: '/download/teen-patti-lucky',
+        permanent: true,
+      },
+      {
+        source: '/download-teen-patti-lucky',
+        destination: '/download/teen-patti-lucky',
         permanent: true,
       },
       {

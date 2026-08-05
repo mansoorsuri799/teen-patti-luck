@@ -9,6 +9,7 @@ import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
 import WebVitalsTracker from "@/components/WebVitalsTracker";
 import { MobileMenuProvider } from "@/components/MobileMenuProvider";
 import { SITE } from "@/lib/site";
+import { getSoftwareApplicationSchema } from "@/lib/softwareApplicationSchema";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -64,9 +65,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon", sizes: "any" },
-      { url: SITE.logo, type: "image/webp", sizes: "192x192" },
+      { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: SITE.logo, type: "image/webp", sizes: "512x512" },
     ],
-    apple: [{ url: SITE.logo, sizes: "180x180" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     shortcut: [{ url: "/favicon.ico", type: "image/x-icon" }],
   },
   verification: {
@@ -128,7 +131,8 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
-        <link rel="apple-touch-icon" href={SITE.logo} sizes="180x180" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <Script id="deferred-manifest" strategy="lazyOnload">
@@ -195,6 +199,13 @@ export default function RootLayout({
                 areaServed: "PK",
               },
             }),
+          }}
+        />
+        <Script
+          id="software-application-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(getSoftwareApplicationSchema()).replace(/</g, "\\u003c"),
           }}
         />
       </body>

@@ -9,6 +9,22 @@ export const SITE = {
     process.env.NEXT_PUBLIC_DOWNLOAD_URL ||
     "https://pk3pattilucky.com/?from_gameid=6843038&channelCode=5577767",
   logo: "/teen-patti-lucky.webp",
+  images: {
+    hero: "/teen-patti-lucky.webp",
+    game: "/teen-patti-lucky-game.webp",
+    pakistan: "/teen-patti-lucky-pakistan.webp",
+    deposit: "/teen-patti-lucky-deposit-money.webp",
+    withdraw: "/teen-patti-lucky-withdraw-money.webp",
+    bonus: "/teen-patti-lucky-user-bonus.webp",
+    spin: "/teen-patti-lucky-spin-wheel.webp",
+    share: "/teen-patti-lucky-share-and-earn.webp",
+  },
+  faviconIco: "/favicon.ico",
+  faviconSvg: "/favicon.svg",
+  faviconPng: "/favicon-96x96.png",
+  appleTouchIcon: "/apple-touch-icon.png",
+  manifest192: "/web-app-manifest-192x192.png",
+  manifest512: "/web-app-manifest-512x512.png",
   ogImage: "/feature/og-image.webp",
   ogImageSquare: "/feature/og-image-square.webp",
   twitterImage: "/feature/twitter-card.webp",
@@ -31,7 +47,8 @@ export const SITE = {
 
 export const ROUTES = {
   home: "/",
-  download: "/download-teen-patti-lucky",
+  downloadHub: "/download",
+  download: "/download/teen-patti-lucky",
   deposit: "/deposit-money-in-teen-patti-lucky",
   withdraw: "/withdraw-money-from-teen-patti-lucky",
   pc: "/teen-patti-lucky-for-pc",
@@ -97,11 +114,27 @@ export const INDEXABLE_PAGES: SitePage[] = [
     changefreq: "daily",
     images: [
       {
-        loc: `${SITE.origin}${SITE.logo}`,
+        loc: `${SITE.origin}${SITE.images.hero}`,
         title: "Teen Patti Lucky app icon",
         caption: "Teen Patti Lucky official APK icon for Android in Pakistan",
       },
+      {
+        loc: `${SITE.origin}${SITE.images.game}`,
+        title: "Teen Patti Lucky game lobby",
+        caption: "Teen Patti Lucky Android lobby with games and wallet UI",
+      },
+      {
+        loc: `${SITE.origin}${SITE.images.pakistan}`,
+        title: "Teen Patti Lucky Pakistan",
+        caption: "Teen Patti Lucky promotional image for Pakistani players",
+      },
     ],
+  },
+  {
+    path: ROUTES.downloadHub,
+    title: "Download Teen Patti Lucky",
+    priority: 0.92,
+    changefreq: "weekly",
   },
   {
     path: ROUTES.download,
@@ -110,9 +143,14 @@ export const INDEXABLE_PAGES: SitePage[] = [
     changefreq: "weekly",
     images: [
       {
-        loc: `${SITE.origin}${SITE.logo}`,
+        loc: `${SITE.origin}${SITE.images.hero}`,
         title: "Download Teen Patti Lucky",
         caption: "Download Teen Patti Lucky APK for Android",
+      },
+      {
+        loc: `${SITE.origin}${SITE.images.game}`,
+        title: "Teen Patti Lucky gameplay lobby",
+        caption: "Teen Patti Lucky app interface after install",
       },
     ],
   },
@@ -121,12 +159,26 @@ export const INDEXABLE_PAGES: SitePage[] = [
     title: "Deposit Money in Teen Patti Lucky",
     priority: 0.9,
     changefreq: "weekly",
+    images: [
+      {
+        loc: `${SITE.origin}${SITE.images.deposit}`,
+        title: "Deposit money in Teen Patti Lucky",
+        caption: "Teen Patti Lucky deposit screen for JazzCash and EasyPaisa",
+      },
+    ],
   },
   {
     path: ROUTES.withdraw,
     title: "Withdraw Money from Teen Patti Lucky",
     priority: 0.9,
     changefreq: "weekly",
+    images: [
+      {
+        loc: `${SITE.origin}${SITE.images.withdraw}`,
+        title: "Withdraw money from Teen Patti Lucky",
+        caption: "Teen Patti Lucky withdrawal screen for Pakistani wallets",
+      },
+    ],
   },
   {
     path: ROUTES.pc,

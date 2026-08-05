@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import DownloadCTA from "@/components/DownloadCTA";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     title: "Withdraw Money from Teen Patti Lucky",
     description: "Cash out Teen Patti Lucky winnings via JazzCash or EasyPaisa.",
     url: `${SITE.origin}${ROUTES.withdraw}`,
+    images: [{ url: `${SITE.origin}${SITE.images.withdraw}`, width: 800, height: 800, alt: "Withdraw from Teen Patti Lucky" }],
   },
 };
 
@@ -37,6 +39,15 @@ export default function WithdrawPage() {
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
         How to Withdraw Money from Teen Patti Lucky
       </h1>
+      <Image
+        src={SITE.images.withdraw}
+        alt="Teen Patti Lucky withdraw money screen for JazzCash and EasyPaisa"
+        width={720}
+        height={720}
+        className="w-full max-w-md mx-auto mb-8 rounded-2xl border border-gray-800 object-contain bg-[#0A1F2E]"
+        priority
+        sizes="(max-width: 768px) 100vw, 448px"
+      />
       <p className="text-gray-300 leading-relaxed mb-8">
         A smooth Teen Patti Lucky withdrawal usually depends on verification and matching wallet details more than on luck. This page explains the Pakistani JazzCash and EasyPaisa cash-out path and what to check when a request stays pending.
       </p>

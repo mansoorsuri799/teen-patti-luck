@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import DownloadCTA from "@/components/DownloadCTA";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     title: "Deposit Money in Teen Patti Lucky",
     description: "JazzCash & EasyPaisa deposit guide for Teen Patti Lucky Pakistan.",
     url: `${SITE.origin}${ROUTES.deposit}`,
+    images: [{ url: `${SITE.origin}${SITE.images.deposit}`, width: 800, height: 800, alt: "Deposit in Teen Patti Lucky" }],
   },
 };
 
@@ -38,6 +40,15 @@ export default function DepositPage() {
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
         How to Deposit Money in Teen Patti Lucky
       </h1>
+      <Image
+        src={SITE.images.deposit}
+        alt="Teen Patti Lucky deposit money screen for JazzCash and EasyPaisa"
+        width={720}
+        height={720}
+        className="w-full max-w-md mx-auto mb-8 rounded-2xl border border-gray-800 object-contain bg-[#0A1F2E]"
+        priority
+        sizes="(max-width: 768px) 100vw, 448px"
+      />
       <p className="text-gray-300 leading-relaxed mb-8">
         Depositing on Teen Patti Lucky is how Pakistani players move PKR from JazzCash or EasyPaisa into table chips. This guide focuses on a careful first top-up so you avoid overpaying and keep a payment proof if credit is delayed.
       </p>

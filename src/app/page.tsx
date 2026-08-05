@@ -4,7 +4,6 @@ import Script from "next/script";
 import { Metadata } from "next";
 import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
 import DownloadCTA from "@/components/DownloadCTA";
-import RatingBadge from "@/components/RatingBadge";
 import { ROUTES, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -121,30 +120,6 @@ export default function Home() {
         },
       },
       {
-        "@type": "SoftwareApplication",
-        name: SITE.name,
-        operatingSystem: "Android",
-        applicationCategory: "GameApplication",
-        image: `${SITE.origin}${SITE.logo}`,
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: SITE.ratingValue,
-          bestRating: "5",
-          ratingCount: SITE.ratingCount,
-        },
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: SITE.currency,
-        },
-        downloadUrl: SITE.downloadUrl,
-        softwareVersion: SITE.version,
-        fileSize: SITE.fileSize,
-        description:
-          "Teen Patti Lucky is an Android Teen Patti app for Pakistani players with JazzCash and EasyPaisa wallet support.",
-        author: { "@type": "Organization", name: SITE.name },
-      },
-      {
         "@type": "HowTo",
         name: "How to download and install Teen Patti Lucky on Android",
         description:
@@ -154,7 +129,7 @@ export default function Home() {
           {
             "@type": "HowToStep",
             name: "Open the download page",
-            text: "Visit teenpattiluckygame.com.pk and tap DOWNLOAD NOW.",
+            text: `Visit ${SITE.domain}/download/teen-patti-lucky and tap DOWNLOAD NOW.`,
           },
           {
             "@type": "HowToStep",
@@ -205,8 +180,6 @@ export default function Home() {
               </p>
             </div>
 
-            <RatingBadge />
-
             <p className="text-lg text-gray-300 leading-relaxed">
               <Link href="/" className="text-accent hover:underline">
                 Teen Patti Lucky
@@ -224,8 +197,8 @@ export default function Home() {
                 <div className="text-gray-400 text-sm">Downloads</div>
               </div>
               <div className="bg-[#0A1F2E] p-6 rounded-2xl text-center flex-1 max-w-[180px]">
-                <div className="text-white text-2xl font-bold mb-1">{SITE.ratingValue}★</div>
-                <div className="text-gray-400 text-sm">{SITE.ratingCountDisplay} ratings</div>
+                <div className="text-white text-2xl font-bold mb-1">{SITE.version}</div>
+                <div className="text-gray-400 text-sm">Latest APK</div>
               </div>
               <div className="bg-[#0A1F2E] p-6 rounded-2xl text-center flex-1 max-w-[180px]">
                 <div className="text-white text-2xl font-bold mb-1">{SITE.fileSize}</div>
@@ -237,16 +210,16 @@ export default function Home() {
 
           <figure className="mt-8 md:mt-0 md:w-1/2 flex justify-center md:justify-end">
             <Image
-              src={SITE.logo}
-              alt="Teen Patti Lucky – Pakistan Teen Patti APK icon"
+              src="/teen-patti-lucky.webp"
+              alt="Teen Patti Lucky – 3 Patti Lucky APK icon for Pakistan"
               title="Teen Patti Lucky APK Download Pakistan"
-              width={320}
-              height={320}
-              className="object-contain drop-shadow-2xl w-[260px] h-[260px] md:w-[320px] md:h-[320px]"
+              width={512}
+              height={512}
+              className="object-contain drop-shadow-2xl w-[280px] h-[280px] md:w-[360px] md:h-[360px]"
               priority
               fetchPriority="high"
               quality={80}
-              sizes="(max-width: 768px) 260px, 320px"
+              sizes="(max-width: 768px) 280px, 360px"
             />
           </figure>
         </div>
@@ -265,7 +238,6 @@ export default function Home() {
                 ["Size", SITE.fileSize],
                 ["Platform", SITE.androidMin],
                 ["Price", "Free"],
-                ["Rating", `${SITE.ratingValue} / 5 (${SITE.ratingCountDisplay})`],
                 ["Payments", "JazzCash, EasyPaisa"],
               ].map(([k, v]) => (
                 <tr key={k} className="bg-[#0A1F2E]/50">
@@ -281,19 +253,44 @@ export default function Home() {
       <article className="px-4 md:px-8 max-w-7xl mx-auto space-y-14 pb-16 prose-invert">
         <section id="what-is">
           <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4">What Is Teen Patti Lucky?</h2>
-          <p className="text-gray-300 leading-relaxed mb-4">
-            Teen Patti Lucky is an Android Teen Patti app built for quick tables, familiar hand rankings, and mobile wallets used across Pakistan. Players open the lobby, pick a stake they can afford, and play Classic or variant modes without needing a desktop casino account.
-          </p>
-          <p className="text-gray-300 leading-relaxed mb-4">
-            The product sits in the same search space as “3 Patti Lucky Pakistan,” so this site uses both names clearly. What matters for ranking and for users is accurate install help, honest payment guidance, and links to deeper deposit and withdraw pages instead of vague promises.
-          </p>
-          <p className="text-gray-300 leading-relaxed">
-            If you are new, start with low tables after a small JazzCash or EasyPaisa top-up. That approach lets you learn timing and pot control before you risk larger balances on Teen Patti Lucky.
-          </p>
+          <div className="md:flex md:gap-8 md:items-start mb-6">
+            <div className="flex-1 space-y-4">
+              <p className="text-gray-300 leading-relaxed">
+                Teen Patti Lucky is an Android Teen Patti app built for quick tables, familiar hand rankings, and mobile wallets used across Pakistan. Players open the lobby, pick a stake they can afford, and play Classic or variant modes without needing a desktop casino account.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                The product sits in the same search space as “3 Patti Lucky Pakistan,” so this site uses both names clearly. What matters for ranking and for users is accurate install help, honest payment guidance, and links to deeper deposit and withdraw pages instead of vague promises.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                If you are new, start with low tables after a small JazzCash or EasyPaisa top-up. That approach lets you learn timing and pot control before you risk larger balances on Teen Patti Lucky.
+              </p>
+            </div>
+            <Image
+              src={SITE.images.pakistan}
+              alt="Teen Patti Lucky Pakistan APK promotional artwork"
+              width={360}
+              height={360}
+              className="mt-6 md:mt-0 w-full max-w-[280px] mx-auto md:mx-0 rounded-2xl object-contain"
+              sizes="280px"
+            />
+          </div>
         </section>
 
         <section id="features">
           <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4">Teen Patti Lucky Features Pakistani Players Use Most</h2>
+          <figure className="mb-8">
+            <Image
+              src={SITE.images.game}
+              alt="Teen Patti Lucky game lobby showing Teen Patti, Rummy, Dragon vs Tiger and more"
+              width={960}
+              height={540}
+              className="w-full rounded-2xl border border-gray-800 object-cover"
+              sizes="(max-width: 1280px) 100vw, 960px"
+            />
+            <figcaption className="text-gray-500 text-sm mt-2">
+              Teen Patti Lucky lobby on Android — games, wallet balance, and promotions in one place.
+            </figcaption>
+          </figure>
           <div className="space-y-6 text-gray-300">
             <div>
               <h3 className="text-xl font-semibold text-white mb-2">Classic Teen Patti tables</h3>
@@ -333,6 +330,32 @@ export default function Home() {
 
         <section id="bonuses">
           <h2 className="text-2xl md:text-3xl font-bold text-accent mb-4">Bonuses & Rewards on Teen Patti Lucky</h2>
+          <div className="grid sm:grid-cols-3 gap-4 mb-6">
+            <Image
+              src={SITE.images.bonus}
+              alt="Teen Patti Lucky user bonus and welcome rewards"
+              width={400}
+              height={400}
+              className="w-full rounded-xl border border-gray-800 object-contain bg-[#0A1F2E]"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+            <Image
+              src={SITE.images.spin}
+              alt="Teen Patti Lucky spin wheel daily reward"
+              width={400}
+              height={400}
+              className="w-full rounded-xl border border-gray-800 object-contain bg-[#0A1F2E]"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+            <Image
+              src={SITE.images.share}
+              alt="Teen Patti Lucky share and earn referral bonus"
+              width={400}
+              height={400}
+              className="w-full rounded-xl border border-gray-800 object-contain bg-[#0A1F2E]"
+              sizes="(max-width: 640px) 100vw, 33vw"
+            />
+          </div>
           <p className="text-gray-300 leading-relaxed mb-4">
             Welcome chips, daily check-ins, recharge extras, and referral credits are the usual Teen Patti Lucky reward types. Offers change, so always read the in-app banner before you claim.
           </p>

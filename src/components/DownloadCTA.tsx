@@ -3,11 +3,13 @@ import { SITE } from "@/lib/site";
 type Props = {
   className?: string;
   label?: string;
+  onClick?: () => void;
 };
 
 export default function DownloadCTA({
   className = "",
   label = "DOWNLOAD NOW",
+  onClick,
 }: Props) {
   return (
     <a
@@ -15,12 +17,13 @@ export default function DownloadCTA({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Download ${SITE.name} APK for Android`}
-      className={`download-btn inline-flex items-center px-8 py-4 text-white font-semibold text-lg rounded-full border-2 border-[#EC4899] bg-transparent hover:bg-[#EC4899]/10 transition-all group ${className}`}
+      onClick={onClick}
+      className={`download-btn inline-flex items-center px-5 py-2.5 text-white font-semibold text-sm md:text-base rounded-full border-2 border-[#EC4899] bg-transparent hover:bg-[#EC4899]/10 transition-all group ${className}`}
     >
       <span>{label}</span>
-      <div className="download-icon ml-3 bg-[#F59E0B] rounded-full p-2 group-hover:scale-110 transition-transform">
+      <div className="download-icon ml-2 bg-[#F59E0B] rounded-full p-1.5 group-hover:scale-110 transition-transform">
         <svg
-          className="w-5 h-5"
+          className="w-4 h-4"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
