@@ -3,7 +3,9 @@ import Link from "next/link";
 import Script from "next/script";
 import { Metadata } from "next";
 import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
+import AppRating from "@/components/AppRating";
 import DownloadCTA from "@/components/DownloadCTA";
+import SoftwareApplicationJsonLd from "@/components/SoftwareApplicationJsonLd";
 import { ROUTES, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -20,10 +22,10 @@ export const metadata: Metadata = {
     url: SITE.origin,
     images: [
       {
-        url: `${SITE.origin}${SITE.logo}`,
-        width: 1024,
-        height: 1024,
-        alt: "Teen Patti Lucky APK icon for Pakistan",
+        url: `${SITE.origin}${SITE.ogImage}`,
+        width: 1200,
+        height: 630,
+        alt: "Teen Patti Lucky APK Download Pakistan",
       },
     ],
     type: "website",
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     title: `Teen Patti Lucky APK Download Pakistan ${SITE.year}`,
     description:
       "Download Teen Patti Lucky APK for Pakistan. JazzCash & EasyPaisa ready.",
-    images: [`${SITE.origin}${SITE.logo}`],
+    images: [`${SITE.origin}${SITE.twitterImage}`],
   },
 };
 
@@ -161,6 +163,7 @@ export default function Home() {
 
   return (
     <>
+      <SoftwareApplicationJsonLd />
       <Script
         id="homepage-schema"
         type="application/ld+json"
@@ -178,13 +181,14 @@ export default function Home() {
               <p className="text-2xl md:text-3xl font-semibold text-accent">
                 APK Download for Pakistan {SITE.year}
               </p>
+              <AppRating />
             </div>
 
             <p className="text-lg text-gray-300 leading-relaxed">
               <Link href="/" className="text-accent hover:underline">
                 Teen Patti Lucky
               </Link>{" "}
-              brings Classic Teen Patti and popular variants to Android with wallets that Pakistani players already use. This guide covers a clean APK install, registration, JazzCash and EasyPaisa flows, and the habits that keep sessions safer.
+              brings Classic Teen Patti and popular variants to Android with wallets that Pakistani players already use. This guide covers a clean APK install, registration, JazzCash and EasyPaisa flows, and the habits that keep sessions safer. The app interface supports English and Urdu.
             </p>
 
             <div className="flex justify-center my-8">
@@ -193,8 +197,8 @@ export default function Home() {
 
             <div className="flex flex-row gap-4 justify-center mt-8 mb-4" style={{ minHeight: "120px" }}>
               <div className="bg-[#0A1F2E] p-6 rounded-2xl text-center flex-1 max-w-[180px]">
-                <div className="text-white text-2xl font-bold mb-1">{SITE.downloadsDisplay}</div>
-                <div className="text-gray-400 text-sm">Downloads</div>
+                <div className="text-white text-2xl font-bold mb-1">{SITE.ratingValue}</div>
+                <div className="text-gray-400 text-sm">Rating / 5</div>
               </div>
               <div className="bg-[#0A1F2E] p-6 rounded-2xl text-center flex-1 max-w-[180px]">
                 <div className="text-white text-2xl font-bold mb-1">{SITE.version}</div>
@@ -234,10 +238,12 @@ export default function Home() {
                 ["App Name", SITE.name],
                 ["Also Known As", SITE.shortName],
                 ["Version", SITE.version],
-                ["Category", "Cards / Game"],
+                ["Category", "Game"],
                 ["Size", SITE.fileSize],
                 ["Platform", SITE.androidMin],
                 ["Price", "Free"],
+                ["Rating", `${SITE.ratingValue} / 5 (${SITE.ratingCountDisplay})`],
+                ["Languages", "English & Urdu"],
                 ["Payments", "JazzCash, EasyPaisa"],
               ].map(([k, v]) => (
                 <tr key={k} className="bg-[#0A1F2E]/50">

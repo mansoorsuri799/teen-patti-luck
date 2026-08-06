@@ -10,7 +10,7 @@ const description =
   "Full Teen Patti Lucky bonus guide: welcome offers, daily login rewards, referral cash, VIP perks, and how to claim them in Pakistan.";
 
 export const metadata: Metadata = {
-  title: "Teen Patti Lucky Bonuses & Rewards Guide 2026",
+  title: "Claim Welcome & Daily Bonuses on Teen Patti Lucky",
   description,
   alternates: { canonical: `${SITE.origin}/blog/${slug}` },
   openGraph: { title, description, url: `${SITE.origin}/blog/${slug}` },

@@ -5,14 +5,10 @@ import Link from 'next/link';
 import { ROUTES } from '@/lib/site';
 
 const categories = [
+  { name: 'Safety & Legal', href: ROUTES.blogSafety },
   { name: 'Register & Login', href: ROUTES.blogLogin },
-  { name: 'Recover Password', href: ROUTES.blogPassword },
-  { name: 'IP Limit Fix', href: ROUTES.blogIpLimit },
-  { name: 'Token Is Null', href: ROUTES.blogTokenNull },
-  { name: 'Lucky vs Blue', href: ROUTES.blogVsBlue },
   { name: 'Bonuses', href: ROUTES.blogBonuses },
   { name: 'Tips to Win', href: ROUTES.blogTips },
-  { name: 'Safety & Legal', href: ROUTES.blogSafety },
 ];
 
 export default function BlogCategoryDropdown() {

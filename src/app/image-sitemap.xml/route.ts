@@ -12,7 +12,6 @@ function escapeXml(s: string) {
 }
 
 export async function GET() {
-  const lastmod = new Date().toISOString().slice(0, 10);
   const entries = INDEXABLE_PAGES.filter((p) => p.images && p.images.length > 0)
     .map((p) => {
       const images = (p.images || [])
@@ -26,7 +25,7 @@ export async function GET() {
         .join("\n");
       return `  <url>
     <loc>${escapeXml(`${SITE.origin}${p.path === "/" ? "/" : p.path}`)}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <lastmod>${p.lastmod}</lastmod>
 ${images}
   </url>`;
     })

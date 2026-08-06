@@ -12,30 +12,20 @@ type BlogPostSchemaProps = {
   datePublished: string;
   dateModified?: string;
   image?: string;
-  breadcrumbOnly?: boolean;
   articleBody?: string;
 };
 
+/** Article JSON-LD only — breadcrumbs come from the visible Breadcrumbs component */
 export default function BlogPostSchema({
   title,
   description,
   slug,
   datePublished,
   dateModified,
-  image = `${SITE.origin}${SITE.logo}`,
-  breadcrumbOnly = false,
+  image = `${SITE.origin}${SITE.images.game}`,
   articleBody,
 }: BlogPostSchemaProps) {
   const url = `${SITE.origin}/blog/${slug}`;
-  const breadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE.origin },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE.origin}/blog` },
-      { "@type": "ListItem", position: 3, name: title, item: url },
-    ],
-  };
   const article: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -58,21 +48,13 @@ export default function BlogPostSchema({
     datePublished,
     dateModified: dateModified || datePublished,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    inLanguage: "en-US",
+    inLanguage: "en-PK",
     ...(articleBody && { articleBody }),
   };
   return (
-    <div suppressHydrationWarning style={{ display: "contents" }}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumb) }}
-      />
-      {!breadcrumbOnly && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: safeJsonLd(article) }}
-        />
-      )}
-    </div>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(article) }}
+    />
   );
 }

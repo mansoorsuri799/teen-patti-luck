@@ -46,6 +46,26 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/blog/how-to-recover-password-teen-patti-lucky',
+        destination: '/blog/how-to-register-and-login-teen-patti-lucky',
+        permanent: true,
+      },
+      {
+        source: '/blog/fix-ip-limit-exceeds-teen-patti-lucky',
+        destination: '/blog/tips-to-win-teen-patti-lucky-pakistan',
+        permanent: true,
+      },
+      {
+        source: '/blog/fix-bonus-token-is-null-teen-patti-lucky',
+        destination: '/blog/teen-patti-lucky-bonuses-rewards-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/3-patti-lucky-vs-3-patti-blue',
+        destination: '/blog/is-teen-patti-lucky-safe-legal-pakistan',
+        permanent: true,
+      },
+      {
         source: '/deposit-money-in-card-rummy',
         destination: '/deposit-money-in-teen-patti-lucky',
         permanent: true,

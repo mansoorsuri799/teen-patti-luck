@@ -6,7 +6,7 @@ import { BLOG_POSTS, ROUTES, SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Teen Patti Lucky Blog — Guides & Tips 2026",
   description:
-    "Teen Patti Lucky blog for Pakistan: safety, account login, bonuses, and winning tips. Short original guides that support the main APK pages.",
+    "Teen Patti Lucky blog for Pakistan: four focused guides on safety, account login, bonuses, and winning tips that support the main APK pages.",
   alternates: { canonical: `${SITE.origin}${ROUTES.blog}` },
 };
 

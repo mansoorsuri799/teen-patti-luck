@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import AppRating from "@/components/AppRating";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import DownloadCTA from "@/components/DownloadCTA";
+import SoftwareApplicationJsonLd from "@/components/SoftwareApplicationJsonLd";
 import { ROUTES, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -14,7 +16,14 @@ export const metadata: Metadata = {
     title: "Teen Patti Lucky APK Download Free for Android",
     description: "Get Teen Patti Lucky APK for Pakistan with clear Android install steps.",
     url: `${SITE.origin}${ROUTES.download}`,
-    images: [{ url: `${SITE.origin}${SITE.logo}`, width: 1024, height: 1024, alt: "Download Teen Patti Lucky" }],
+    images: [
+      {
+        url: `${SITE.origin}${SITE.ogImage}`,
+        width: 1200,
+        height: 630,
+        alt: "Download Teen Patti Lucky APK",
+      },
+    ],
   },
 };
 
@@ -37,6 +46,7 @@ export default function DownloadTeenPattiLuckyPage() {
 
   return (
     <article className="max-w-4xl mx-auto px-4 md:px-8 py-10">
+      <SoftwareApplicationJsonLd />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
@@ -52,9 +62,10 @@ export default function DownloadTeenPattiLuckyPage() {
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
         Teen Patti Lucky APK Download for Android
       </h1>
-      <p className="text-accent text-lg mb-4">
+      <p className="text-accent text-lg mb-2">
         {SITE.version} · {SITE.fileSize} · Pakistan
       </p>
+      <AppRating className="mb-4" />
 
       <div className="flex flex-col items-center gap-5 my-8 text-center">
         <Image
@@ -67,7 +78,7 @@ export default function DownloadTeenPattiLuckyPage() {
           sizes="240px"
         />
         <DownloadCTA />
-        <p className="text-gray-400 text-sm">{SITE.androidMin} recommended</p>
+        <p className="text-gray-400 text-sm">{SITE.androidMin} recommended · Free · Game</p>
       </div>
 
       <section className="space-y-4 text-gray-300 leading-relaxed mb-10">

@@ -9,7 +9,6 @@ import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
 import WebVitalsTracker from "@/components/WebVitalsTracker";
 import { MobileMenuProvider } from "@/components/MobileMenuProvider";
 import { SITE } from "@/lib/site";
-import { getSoftwareApplicationSchema } from "@/lib/softwareApplicationSchema";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -199,13 +198,6 @@ export default function RootLayout({
                 areaServed: "PK",
               },
             }),
-          }}
-        />
-        <Script
-          id="software-application-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getSoftwareApplicationSchema()).replace(/</g, "\\u003c"),
           }}
         />
       </body>

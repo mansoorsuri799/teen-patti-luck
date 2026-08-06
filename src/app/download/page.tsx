@@ -6,7 +6,7 @@ import DownloadCTA from "@/components/DownloadCTA";
 import { ROUTES, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Download Teen Patti Lucky APK",
+  title: "Download Teen Patti Lucky APK Hub",
   description:
     "Download hub for Teen Patti Lucky APK in Pakistan — official install guide, ratings, and Android setup.",
   alternates: { canonical: `${SITE.origin}${ROUTES.downloadHub}` },
@@ -18,10 +18,12 @@ export default function DownloadHubPage() {
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
-          { name: "Download" },
+          { name: "Download Hub" },
         ]}
       />
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Download</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        Teen Patti Lucky APK Files
+      </h1>
       <p className="text-gray-300 mb-8 leading-relaxed">
         Get the Teen Patti Lucky Android APK and follow the Pakistan-ready install guide.
       </p>

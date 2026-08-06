@@ -61,53 +61,10 @@ export const ROUTES = {
   blogLogin: "/blog/how-to-register-and-login-teen-patti-lucky",
   blogBonuses: "/blog/teen-patti-lucky-bonuses-rewards-guide",
   blogTips: "/blog/tips-to-win-teen-patti-lucky-pakistan",
-  blogPassword: "/blog/how-to-recover-password-teen-patti-lucky",
-  blogIpLimit: "/blog/fix-ip-limit-exceeds-teen-patti-lucky",
-  blogTokenNull: "/blog/fix-bonus-token-is-null-teen-patti-lucky",
-  blogVsBlue: "/blog/3-patti-lucky-vs-3-patti-blue",
 } as const;
 
+/** Keep only 3–4 unique SERP intents (skill rule). */
 export const BLOG_POSTS = [
-  {
-    slug: "how-to-register-and-login-teen-patti-lucky",
-    title: "How to Register and Login on Teen Patti Lucky",
-    description:
-      "Complete Teen Patti Lucky register and login guide for Pakistan: phone OTP signup, password login, and common login errors.",
-    date: "2026-08-06",
-    readMin: 8,
-  },
-  {
-    slug: "how-to-recover-password-teen-patti-lucky",
-    title: "How to Recover Password on Teen Patti Lucky",
-    description:
-      "Forgot your Teen Patti Lucky password? Step-by-step OTP recovery for Pakistani numbers, plus tips if SMS is delayed.",
-    date: "2026-08-06",
-    readMin: 7,
-  },
-  {
-    slug: "fix-ip-limit-exceeds-teen-patti-lucky",
-    title: "How to Fix IP Limit Exceeds on Teen Patti Lucky",
-    description:
-      "Teen Patti Lucky IP limit exceeds error? Causes and fixes for Pakistani players: Wi-Fi, VPN, network switch, and support steps.",
-    date: "2026-08-06",
-    readMin: 8,
-  },
-  {
-    slug: "fix-bonus-token-is-null-teen-patti-lucky",
-    title: "Bonus Claim Says Token Is Null — How to Fix",
-    description:
-      "Teen Patti Lucky bonus claim shows token is null? Clear causes and fixes: re-login, update APK, network, and when to contact support.",
-    date: "2026-08-06",
-    readMin: 7,
-  },
-  {
-    slug: "3-patti-lucky-vs-3-patti-blue",
-    title: "3 Patti Lucky vs 3 Patti Blue — Comparison 2026",
-    description:
-      "3 Patti Lucky vs 3 Patti Blue for Pakistani players: games, payments, bonuses, and which APK fits your play style.",
-    date: "2026-08-06",
-    readMin: 9,
-  },
   {
     slug: "is-teen-patti-lucky-safe-legal-pakistan",
     title: "Is Teen Patti Lucky Safe & Legal in Pakistan? 2026 Guide",
@@ -115,6 +72,14 @@ export const BLOG_POSTS = [
       "Is Teen Patti Lucky safe and legal in Pakistan? Clear 2026 guide on security, JazzCash withdrawals, risks, and how to play responsibly.",
     date: "2026-08-05",
     readMin: 9,
+  },
+  {
+    slug: "how-to-register-and-login-teen-patti-lucky",
+    title: "How to Register and Login on Teen Patti Lucky",
+    description:
+      "Complete Teen Patti Lucky register and login guide for Pakistan: phone OTP signup, password login, and common login errors.",
+    date: "2026-08-06",
+    readMin: 8,
   },
   {
     slug: "teen-patti-lucky-bonuses-rewards-guide",
@@ -139,6 +104,7 @@ export type SitePage = {
   title: string;
   priority: number;
   changefreq: "daily" | "weekly" | "monthly";
+  lastmod: string;
   images?: { loc: string; title: string; caption: string }[];
 };
 
@@ -148,6 +114,7 @@ export const INDEXABLE_PAGES: SitePage[] = [
     title: "Teen Patti Lucky APK Download Pakistan",
     priority: 1,
     changefreq: "daily",
+    lastmod: "2026-08-06",
     images: [
       {
         loc: `${SITE.origin}${SITE.images.hero}`,
@@ -171,12 +138,14 @@ export const INDEXABLE_PAGES: SitePage[] = [
     title: "Download Teen Patti Lucky",
     priority: 0.92,
     changefreq: "weekly",
+    lastmod: "2026-08-06",
   },
   {
     path: ROUTES.download,
     title: "Download Teen Patti Lucky APK",
     priority: 0.95,
     changefreq: "weekly",
+    lastmod: "2026-08-06",
     images: [
       {
         loc: `${SITE.origin}${SITE.images.hero}`,
@@ -195,6 +164,7 @@ export const INDEXABLE_PAGES: SitePage[] = [
     title: "Deposit Money in Teen Patti Lucky",
     priority: 0.9,
     changefreq: "weekly",
+    lastmod: "2026-08-05",
     images: [
       {
         loc: `${SITE.origin}${SITE.images.deposit}`,
@@ -208,6 +178,7 @@ export const INDEXABLE_PAGES: SitePage[] = [
     title: "Withdraw Money from Teen Patti Lucky",
     priority: 0.9,
     changefreq: "weekly",
+    lastmod: "2026-08-05",
     images: [
       {
         loc: `${SITE.origin}${SITE.images.withdraw}`,
@@ -221,45 +192,52 @@ export const INDEXABLE_PAGES: SitePage[] = [
     title: "Teen Patti Lucky for PC",
     priority: 0.85,
     changefreq: "monthly",
+    lastmod: "2026-08-05",
   },
   {
     path: ROUTES.about,
     title: "About Teen Patti Lucky",
     priority: 0.7,
     changefreq: "monthly",
+    lastmod: "2026-08-05",
   },
   {
     path: ROUTES.blog,
     title: "Teen Patti Lucky Blog",
     priority: 0.8,
     changefreq: "weekly",
+    lastmod: "2026-08-06",
   },
   {
     path: ROUTES.contact,
     title: "Contact Teen Patti Lucky",
     priority: 0.6,
     changefreq: "monthly",
+    lastmod: "2026-08-05",
   },
   {
     path: ROUTES.privacy,
     title: "Privacy Policy",
     priority: 0.4,
     changefreq: "monthly",
+    lastmod: "2026-08-05",
   },
   {
     path: ROUTES.disclaimer,
     title: "Disclaimer",
     priority: 0.4,
     changefreq: "monthly",
+    lastmod: "2026-08-05",
   },
   ...BLOG_POSTS.map((p) => ({
     path: `/blog/${p.slug}`,
     title: p.title,
     priority: 0.75,
     changefreq: "monthly" as const,
+    lastmod: p.date,
     images: [
       {
-        loc: `${SITE.origin}${SITE.logo}`,
+        loc: `${SITE.origin}${SITE.images.game}`,
         title: p.title,
         caption: p.description,
       },

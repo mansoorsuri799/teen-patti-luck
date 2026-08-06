@@ -69,11 +69,8 @@ export default function Page() {
         <h2 className="text-2xl font-bold text-accent">Common register / login problems</h2>
         <p>
           <strong className="text-white">OTP delay:</strong> wait one minute, check signal, then resend.{" "}
-          <strong className="text-white">Wrong password:</strong> use{" "}
-          <Link href={ROUTES.blogPassword} className="text-accent hover:underline">
-            password recovery
-          </Link>
-          .{" "}
+          <strong className="text-white">Wrong password:</strong> use Forgot Password in the app and
+          complete the OTP reset on your Pakistani number.{" "}
           <strong className="text-white">App stuck:</strong> clear cache or reinstall the latest APK.
         </p>
 

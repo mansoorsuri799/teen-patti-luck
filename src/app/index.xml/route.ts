@@ -12,11 +12,10 @@ function escapeXml(s: string) {
 }
 
 export async function GET() {
-  const lastmod = new Date().toISOString().slice(0, 10);
   const urls = INDEXABLE_PAGES.map((p) => {
     return `  <url>
     <loc>${escapeXml(`${SITE.origin}${p.path === "/" ? "/" : p.path}`)}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <lastmod>${p.lastmod}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority.toFixed(1)}</priority>
   </url>`;
