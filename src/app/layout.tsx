@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.origin),
   title: {
-    default: `Teen Patti Lucky APK Download Pakistan ${SITE.year}`,
+    default: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
     template: `%s | ${SITE.name}`,
   },
   description:
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     canonical: SITE.origin,
   },
   openGraph: {
-    title: `Teen Patti Lucky APK Download Pakistan ${SITE.year}`,
+    title: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
     description:
       "Download Teen Patti Lucky APK for Pakistan. Play real Teen Patti tables with JazzCash & EasyPaisa support. Free · Android · Game.",
     url: SITE.origin,
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Teen Patti Lucky APK Download Pakistan ${SITE.year}`,
+    title: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
     description:
       "Download Teen Patti Lucky APK for Pakistan. JazzCash & EasyPaisa ready. Free Android game guide.",
     images: [

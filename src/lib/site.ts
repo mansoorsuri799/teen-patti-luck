@@ -111,7 +111,7 @@ export type SitePage = {
 export const INDEXABLE_PAGES: SitePage[] = [
   {
     path: "/",
-    title: "Teen Patti Lucky APK Download Pakistan",
+    title: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
     priority: 1,
     changefreq: "daily",
     lastmod: "2026-08-06",

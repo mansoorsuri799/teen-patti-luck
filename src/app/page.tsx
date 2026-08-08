@@ -10,13 +10,13 @@ import { ROUTES, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: `Teen Patti Lucky APK Download Pakistan ${SITE.year}`,
+    absolute: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
   },
   description:
     "Teen Patti Lucky APK Download for Pakistan — latest V1.232, JazzCash & EasyPaisa cash-out, Classic Teen Patti, Muflis, AK47 & more. Free Android guide.",
   alternates: { canonical: SITE.origin },
   openGraph: {
-    title: `Teen Patti Lucky APK Download Pakistan ${SITE.year}`,
+    title: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
     description:
       "Download Teen Patti Lucky APK for Pakistan. Play Teen Patti tables and withdraw via JazzCash & EasyPaisa.",
     url: SITE.origin,
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
         url: `${SITE.origin}${SITE.ogImage}`,
         width: 1200,
         height: 630,
-        alt: "Teen Patti Lucky APK Download Pakistan",
+        alt: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `Teen Patti Lucky APK Download Pakistan ${SITE.year}`,
+    title: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
     description:
       "Download Teen Patti Lucky APK for Pakistan. JazzCash & EasyPaisa ready.",
     images: [`${SITE.origin}${SITE.twitterImage}`],
@@ -91,7 +91,7 @@ export default function Home() {
         "@type": "WebPage",
         "@id": `${SITE.origin}/#webpage`,
         url: SITE.origin,
-        name: `Teen Patti Lucky APK Download Pakistan ${SITE.year}`,
+        name: "Teen Patti Lucky Pakistan v1.232 Download Official APK",
         isPartOf: { "@id": `${SITE.origin}/#website` },
         primaryImageOfPage: {
           "@type": "ImageObject",
